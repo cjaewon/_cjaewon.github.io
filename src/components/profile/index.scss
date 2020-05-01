@@ -1,0 +1,10 @@
+.profile_img {
+  object-fit: 'cover';
+  border-radius: 50%;
+  border: 2px solid;
+  border-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  margin-right: auto;
+  margin-left: auto;
+  width: 12rem;
+  height: 12rem;
+}
