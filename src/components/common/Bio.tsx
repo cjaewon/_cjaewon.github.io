@@ -2,25 +2,28 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const bios = [
-  '웹 프론트 / 백엔드 개발자',
-  '천재(?) 개발자',
-  'Node.js / Golang 을 좋아하는 학생',
+  '안녕하세요 🖐🏻',
+  '저는 💻 프로그래밍을 좋아하는 개발자 겸 학생이에요.',
+  '주로 🌲Node.js 와 🐿 Go 를 사용합니다',
 ];
 
 const Bio: React.FC<{}> = () => {
-  const [bioCount, setBioCount] = useState(0);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const updateBio = setInterval(
-      () => setBioCount(bioCount => bioCount >= bios.length ? 0 : bioCount + 1),
-    9000);
+    const updateBio = setInterval(() =>
+      setIndex(prev => {
+        if (!bios[prev + 2]) clearInterval(updateBio);
+        return prev + 1;
+      })
+    , 6000);
 
     return () => clearInterval(updateBio);
   }, []);
 
   return (
     <BioTemplate>
-      <h1 className="gugi">" {bios[bioCount]} "</h1>
+      <h1 className="song-myung">" {bios[index]} "</h1>
     </BioTemplate>
   );
 };
@@ -30,7 +33,7 @@ const BioTemplate = styled.div`
   justify-content: center;
 
   h1 {
-    margin-top: 2rem;
+    margin-top: 4rem;
 
     font-size: 2.25rem;
     opacity: 0.85;

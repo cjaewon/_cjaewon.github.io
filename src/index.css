@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Nanum+Gothic:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Song+Myung&family=Nanum+Gothic:wght@400;700&display=swap');
 
 .gugi {
   font-family: 'Gugi', cursive;
+}
+
+.song-myung {
+  font-family: 'Song Myung', serif;
 }
 
 .nanum-gothic {
