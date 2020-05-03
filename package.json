@@ -1,6 +1,7 @@
 {
   "name": "cjaewon.github.io",
   "version": "0.1.0",
+  "license": "MIT",
   "home": "https://cjaewon.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -27,7 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
