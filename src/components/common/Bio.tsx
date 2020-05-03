@@ -32,9 +32,10 @@ const BioTemplate = styled.div`
   display: flex;
   justify-content: center;
 
-  h1 {
-    margin-top: 4rem;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 
+  h1 {
     font-size: 2.25rem;
     opacity: 0.85;
   }

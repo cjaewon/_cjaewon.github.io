@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 
 import Profile from '../components/common/Profile';
 import Bio from '../components/common/Bio';
+import Stack from '../components/common/Stack';
 
 function HomePage() {
   return (
@@ -18,6 +19,9 @@ function HomePage() {
       <main>
         <Profile />
         <Bio />
+        <hr/>
+        <Stack />
+        <hr/>
       </main> 
     </HomeTemplate>
   );
