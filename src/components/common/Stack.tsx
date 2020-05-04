@@ -1,10 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
+function getColorbyLevel(level: number): string {
+  const color = ['#C4A370', '#D3D3D3', '#FFCA09'];
+  return color[level - 1];
+}
+
 const Stack: React.FC<{}> = () => {
   return (
     <StackTemplate>
       <h1 className="gugi">기술 스택</h1>
+      <p>숙련도는 색깔로 표시됩니다.</p>
       <StackRow title="Frontend" list={
         [{
           name: 'JavaScript',
@@ -23,7 +29,7 @@ const Stack: React.FC<{}> = () => {
         },
         {
           name: 'Css',
-          description: '완벽하게 사용 할 순 없지만 구글의 힘을 빌려서 보안 가능합니다',
+          description: '완벽하게 사용 할 순 없지만 구글의 힘을 빌려서 보완 가능합니다',
           level: 2,
         },
         {
@@ -35,7 +41,7 @@ const Stack: React.FC<{}> = () => {
       } />
       <StackRow title="Backend" list={
         [{
-          name: 'Node.js',
+          name: 'JavaScript(Node.js)',
           description: '가장 잘 쓰고 많이 써본 프로그래밍 언어입니다.',
           level: 3,
         }, 
@@ -90,7 +96,8 @@ function StackRow({ title, list }: { title: string, list: Array<{ name: string, 
       {
         list.map(data => 
           <div className="row">
-            <h2>{data.name}</h2> <span>{data.description}</span>
+            <h2 style={{ backgroundColor: getColorbyLevel(data.level) }}>{data.name}</h2>
+            <span>{data.description}</span>
           </div>
         )
       }
@@ -117,6 +124,10 @@ const StackRowTemplate = styled.div`
     margin-bottom: 0;
 
     font-size: 1.25rem;
+
+    background-color:  #FFCA09; /* #BEBEC0 #E4BD82 */
+    padding: 0.25rem;
+    border-radius: 0.25rem;
   }
 
   .row {
