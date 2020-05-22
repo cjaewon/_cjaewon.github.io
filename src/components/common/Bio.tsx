@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import media from '../../lib/media';
 
 const bios = [
   '안녕하세요 🖐🏻',
@@ -38,6 +39,18 @@ const BioTemplate = styled.div`
   h1 {
     font-size: 2.25rem;
     opacity: 0.85;
+  }
+
+  ${media.small} {
+    h1 {
+      max-width: 23rem;
+    }
+  }
+
+  ${media.xsmall} {
+    h1 {
+      max-width: 17rem;
+    }
   }
 `;
 

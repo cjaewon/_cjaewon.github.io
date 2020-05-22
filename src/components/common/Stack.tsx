@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import media from '../../lib/media';
+
 function getColorbyLevel(level: number): string {
   const color = ['#C4A370', '#D3D3D3', '#FFCA09'];
   return color[level - 1];
@@ -95,7 +97,7 @@ function StackRow({ title, list }: { title: string, list: Array<{ name: string, 
       <h1>{title}</h1>
       {
         list.map(data => 
-          <div className="row">
+          <div className="row" key={data.name}>
             <h2 style={{ backgroundColor: getColorbyLevel(data.level) }}>{data.name}</h2>
             <span>{data.description}</span>
           </div>
@@ -117,7 +119,7 @@ const StackTemplate = styled.div`
 `;
 
 const StackRowTemplate = styled.div`
-  width: 44rem;
+  width: 47rem;
 
   h2 {
     margin-top: 0;
@@ -133,8 +135,35 @@ const StackRowTemplate = styled.div`
   .row {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     margin-top: 0.5rem;
+  }
+  
+  ${media.small} {
+    width: 23rem;
+
+    .row {
+      display: table;
+    }
+
+    h2 {
+      width: 23rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  ${media.xsmall} {
+    width: 17rem;
+
+    .row {
+      display: table;
+    }
+
+    h2 {
+      width: 17rem;
+      margin-bottom: 0.5rem;
+    }
   }
 `;
 

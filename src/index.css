@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Gugi&family=Song+Myung&family=Nanum+Gothic:wght@400;700&display=swap');
 
+html, body {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
 .gugi {
   font-family: 'Gugi', cursive;
 }
