@@ -18,7 +18,7 @@ const data: ProjectData[] = [{
   name: '급식봇',
   description: '전국 급식을 알려주는 카카오톡 급식봇 입니다.',
   thumbnail: mealbotThumbnail,
-  link: 'https://center-pf.kakao.com/_xjXYVT/',
+  link: 'http://pf.kakao.com/_xjXYVT',
   stacks: ['Node.js', 'Koa.js', 'serverless', 'TypeScript'],
 }, {
   name: '편지봇 / letterbot',
