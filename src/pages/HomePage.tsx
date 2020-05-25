@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet-async';
 
+import HomeContainer from '../container/HomeContainer';
 
 function HomePage() {
   return (
@@ -14,7 +15,7 @@ function HomePage() {
         />
       </Helmet>
       <main>
-
+        <HomeContainer />
       </main> 
     </HomeTemplate>
   );

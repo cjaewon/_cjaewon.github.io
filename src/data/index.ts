@@ -1,5 +1,5 @@
-import mealbotThumbnail from '../../static/image/mealbot-thumbnail.jpg';
-import letterbotThumbnail from '../../static/image/letterbot-thumbnail.png';
+import mealbotThumbnail from '../static/image/mealbot-thumbnail.jpg';
+import letterbotThumbnail from '../static/image/letterbot-thumbnail.png';
 
 export type ProjectData = {
   name: string;
