@@ -28,7 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -b master -d build"
+    "deploy": "echo 'hello.cjaewon.com' > dist/CNAME &&  gh-pages -b master -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

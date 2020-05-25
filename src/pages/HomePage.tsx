@@ -2,10 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet-async';
 
-import Profile from '../components/common/Profile';
-import Bio from '../components/common/Bio';
-import Stack from '../components/common/Stack';
-import Project from '../components/common/Project';
 
 function HomePage() {
   return (
@@ -18,12 +14,7 @@ function HomePage() {
         />
       </Helmet>
       <main>
-        <Profile />
-        <Bio />
-        <hr/>
-        <Stack />
-        <hr/>
-        <Project />
+
       </main> 
     </HomeTemplate>
   );

@@ -1,34 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import mealbotThumbnail from '../../static/image/mealbot-thumbnail.jpg';
-import letterbotThumbnail from '../../static/image/letterbot-thumbnail.png';
+import { ProjectData } from '../../data';
 
 import media from '../../lib/media';
 
-type ProjectData = {
-  name: string;
-  description: string;
-  thumbnail: string;
-  link: string;
-  stacks: string[];
-}
 
-const data: ProjectData[] = [{
-  name: '급식봇',
-  description: '전국 급식을 알려주는 카카오톡 급식봇 입니다.',
-  thumbnail: mealbotThumbnail,
-  link: 'http://pf.kakao.com/_xjXYVT',
-  stacks: ['Node.js', 'Koa.js', 'serverless', 'TypeScript'],
-}, {
-  name: '편지봇 / letterbot',
-  description: '깃헙 액션을 사용하여 매일 아침마다 브리핑을 해주는 봇 입니다.',
-  thumbnail: letterbotThumbnail,
-  link: 'https://github.com/cjaewon/letterbot',
-  stacks: ['Node.js', 'github action', 'TypeScript'],
-}];
-
-const Project: React.FC<{}> = () => {
+const Project: React.FC<{ data: ProjectData[] }> = ({
+  data,
+}) => {
   return (
     <ProjectTemplate>
       <h1 className="title gugi">프로젝트</h1>
