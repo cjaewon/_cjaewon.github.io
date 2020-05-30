@@ -16,8 +16,20 @@ type StackProps = {
 };
 
 const Stack: React.FC<StackProps> = ({ frontend, backend, etc }) => {
+  // const ref = useRef<HTMLDivElement>(null);
+  // const scroll = () => {
+  //   if (!ref.current) return;
+
+  //   const rect = ref.current.getBoundingClientRect();
+  //   if((rect.top >= 0) && (rect.bottom <= window.innerHeight - 10)) {
+  //     console.log('You Can View me');
+  //   }
+  // }
+
+  // useScroll(scroll);
+
   return (
-    <StackTemplate>
+    <StackTemplate /* ref={ref} */>
       <h1 className="gugi">기술 스택</h1>
       <p>숙련도는 색깔로 표시됩니다.</p>
       <StackRow title="Frontend" list={frontend} />
