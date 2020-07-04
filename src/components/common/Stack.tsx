@@ -46,7 +46,7 @@ function StackRow({ title, list }: { title: string, list: Array<{
       {
         list.map(data => 
           <div className="row" key={data.name}>
-            <h2 style={{  backgroundColor: data.bgColor || '#CBD5E0', color: data.color || 'black' }}># {data.name}</h2>
+            <h2 style={{ backgroundColor: data.bgColor || '#CBD5E0', color: data.color || 'black' }}># {data.name}</h2>
             <span>{data.description}</span>
           </div>
         )
@@ -86,6 +86,12 @@ const StackRowTemplate = styled.div`
     align-items: center;
 
     margin-top: 0.5rem;
+    transition: all 0.5s;
+
+    &:hover {
+      cursor: default;
+      filter: brightness(85%);
+    }
   }
   
   ${media.small} {

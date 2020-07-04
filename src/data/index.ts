@@ -119,7 +119,7 @@ export const stacks: StacksData = {
     name: 'Node.js',
     description: '가장 잘 쓰고 많이 써본 프로그래밍 언어입니다.',
     bgColor: '#68A063',
-    color: '#303030',
+    color: '#0f0f0f',
   }, 
   {
     name: 'Koa.js / Express.js',

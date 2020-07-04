@@ -88,7 +88,7 @@ const CardTempalte = styled.div`
 
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
-    transition: all 1s;
+    transition: all 1s ease;
 
     &:hover {
       filter: brightness(85%);
