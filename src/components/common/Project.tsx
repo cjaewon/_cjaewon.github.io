@@ -12,14 +12,16 @@ const Project: React.FC<{ data: ProjectData[] }> = ({
   return (
     <ProjectTemplate>
       <h1 className="title gugi">프로젝트</h1>
-      {data.map(info => 
-        <Card {...info} key={info.name} />
-      )}
+      <CardsTemplate>
+        {data.map(info => 
+          <Card {...info} key={info.name} />
+        )}
+      </CardsTemplate>
     </ProjectTemplate>
   )
 };
 
-function Card({ name, description, thumbnail, link, stacks }: ProjectData) {
+function Card({ name, description, thumbnail, buttons, stacks }: ProjectData) {
   return (
     <CardTempalte>
       <img src={thumbnail} alt={`${name} thumbnail`} />
@@ -28,7 +30,7 @@ function Card({ name, description, thumbnail, link, stacks }: ProjectData) {
         <p>
           {description}
         </p>
-        <a href={link}>사용해보기</a>
+        {buttons.map(button => <a href={button.link}>{button.name}</a>)}
       </div>
       <div className="tag">
         {
@@ -52,12 +54,29 @@ const ProjectTemplate = styled.div`
   .title {
     margin-bottom: 5rem;
   }
+
 `;
+
+const CardsTemplate = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+
+  grid-gap: 1rem;
+
+  ${media.medium} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  ${media.small} {
+    display: flex;
+    flex-direction: column;
+  }
+`
 
 const CardTempalte = styled.div`
   max-width: 22rem;
   box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0 ,0, 0, 0.05);
-  border-radius: 20px;
 
   margin-bottom: 2rem;
 
@@ -67,8 +86,14 @@ const CardTempalte = styled.div`
 
     object-fit: cover;
 
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    transition: all 1s;
+
+    &:hover {
+      filter: brightness(85%);
+      cursor: pointer;
+    }
   }
 
   .info {
