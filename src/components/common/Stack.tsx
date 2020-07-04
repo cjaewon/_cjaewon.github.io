@@ -4,11 +4,6 @@ import styled from 'styled-components';
 import media from '../../lib/media';
 import { stacks } from '../../data';
 
-function getColorbyLevel(level: number): string {
-  const color = ['#C4A370', '#D3D3D3', '#FFCA09'];
-  return color[level - 1];
-}
-
 type StackProps = {
   frontend: typeof stacks.frontend;
   backend: typeof stacks.backend;
@@ -39,14 +34,19 @@ const Stack: React.FC<StackProps> = ({ frontend, backend, etc }) => {
   );
 };
 
-function StackRow({ title, list }: { title: string, list: Array<{ name: string, description: string, level: number }> }) {
+function StackRow({ title, list }: { title: string, list: Array<{ 
+  name: string;
+  description: string;
+  bgColor?: string;
+  color?: string;
+}> }) {
   return (
     <StackRowTemplate>
       <h1>{title}</h1>
       {
         list.map(data => 
           <div className="row" key={data.name}>
-            <h2 style={{ backgroundColor: getColorbyLevel(data.level) }}>{data.name}</h2>
+            <h2 style={{  backgroundColor: data.bgColor || '#CBD5E0', color: data.color || 'black' }}># {data.name}</h2>
             <span>{data.description}</span>
           </div>
         )
